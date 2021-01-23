@@ -6,52 +6,49 @@ import { IHandles } from './Main';
 interface Props extends IHandles  {
     name: string,
     isOn: boolean,
-    id:number
+    id:number,
+    device?:any
 }
 
 
 const RoomBlock: React.FC<Props> = (props:Props ) =>{
-    // let shows:boolean;
-    // shows=true;
-    // const show = (e : React.MouseEvent<HTMLElement>) =>{
-    //     e.preventDefault();
-    //     console.log("show");
-    // }
-
     const [toggleSwitch, setToggleSwitch] = useState(props.isOn);
+    // const [devicesAmount, setDevicesAmount] = useState(0);
+    // Switching room  - ON or OFF
     const handleChange = (checked: boolean, event: MouseEvent | SyntheticEvent<MouseEvent | KeyboardEvent, Event>) => {
-        //  setToggleSwitch((prevState) => !prevState);  
-        // var retrievedObject: roomsType[];
-        // retrievedObject = JSON.parse(localStorage.getItem('Rooms') || '[]');
-        // retrievedObject[id].isOn = !toggleSwitch;
-        // localStorage.setItem('Rooms', JSON.stringify(retrievedObject));
         setToggleSwitch(!toggleSwitch);
         props.handleToggle(props.id,!toggleSwitch);
     }
-
-    const handleDelete = (event: React.MouseEvent<HTMLDivElement>) =>{
+    // Deleting rooms 
+    const handleDelete = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) =>{
         if (window.confirm('Are you sure you wish to delete this room?')){
-        // var retrievedObject: roomsType[];
-        // retrievedObject = JSON.parse(localStorage.getItem('Rooms') || '[]');
-        
-        // retrievedObject.splice(id,1);
-
-        // localStorage.setItem('Rooms', JSON.stringify(retrievedObject));
         props.handleDelete(props.id);
     }
     }
+    // console.log(props.device);
+    // if(props.device!==undefined){
+    //     setDevicesAmount(props.device.length);
+    // }
 
      return  (
         
          <div className="roomBlock">
-            <h3>{props.name}</h3>    
-            <div onClick={handleDelete}>X</div>
-             <label>
-             <span>ON/OFF</span>
-             <Switch  onChange={handleChange} checked={toggleSwitch} />
-             </label>
-             <Link to={`/settings/${props.id}`} >Settings</Link>
-             <Link to={{pathname: `settings/${props.id}`, query: { id:props.id }}}></Link>
+            
+            
+                <h2>{props.name}</h2> 
+                <h4 className="devicesAmount">Devices:{props.device.length}</h4> 
+            
+            
+             
+             {/* <span> ON/OFF</span> */}
+             <div className="roomOptions">
+                 
+                <Switch onColor='#f57843' offColor="#f9a886" onChange={handleChange} checked={toggleSwitch} />
+                <Link to={`/SmartHome/settings/${props.id}`} ><img src="settings.png" height="30px" width="30px"/></Link>
+                <div className="close" onClick={handleDelete}><img src="x.png" height="30px" width="30px"/></div> 
+            
+             </div>
+             
          </div>
      )
     }

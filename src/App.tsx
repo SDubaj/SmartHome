@@ -6,17 +6,14 @@ import Settings from './components/Settings';
 
 
 const App = () => {
-  
   return (
-    <div className="App">
-      <div className="container"> 
-              <div><h3>Hi user</h3></div>
-              <div><h5>Welcome Home ! </h5></div>
-              <Switch>
-          <Route  path="/" exact component={Main} />
-          <Route exact path="/settings/:id" component={Settings} />
-        </Switch>
-      </div>
+    <div className="container">
+      
+            <Switch>
+              <Route exact path="/SmartHome/"  component={Main} />
+              <Route exact path="/SmartHome/settings/:id" component={Settings} />
+            </Switch>
+      
       
     </div>
   );

@@ -6,25 +6,26 @@ import RoomBlocks from './RoomBlocks';
 //     name:string,
 //     isOn:boolean
 // }
+//device interface
 export interface Devices{
   device:string,
   isOn:boolean,
-  temp?:number,
-  brightness?:number
+  type:string,
+  value:number
 }
 
+//room interface
 export interface IRoom{
   name:string,
   isOn:boolean,
   devices: [Devices]
 }
-
+//interface with room handlers - delete / toggle
 export interface IHandles{
   handleDelete: (a:any) => void,
-  handleToggle: (id:number, a:boolean) => void,
-      
-    
+  handleToggle: (id:number, a:boolean) => void, 
 }
+// interface with room handlers - addRoom , showForm
 export interface IHandleAddRoom{
   toggleShow: () => void,
   handleAdd: (a:any) => void
@@ -32,66 +33,39 @@ export interface IHandleAddRoom{
 
 
 const Main = () =>{
-    // const handleDelete = (event: React.MouseEvent<HTMLDivElement>) =>{
-    //     if (window.confirm('Are you sure you wish to delete this room?')){
-    //     var retrievedObject: roomsType[];
-    //     retrievedObject = JSON.parse(localStorage.getItem('Rooms') || '[]');
-        
-    //     retrievedObject.splice(id,1);
-
-    //     localStorage.setItem('Rooms', JSON.stringify(retrievedObject));
-    // }
-    // }
-
-
-
     window.addEventListener('storage',e => console.log())
-    //  const object  = JSON.parse(localStorage.getItem('Rooms') || '[]');
-    const [rooms, setRooms] = useState<IRoom[]>([]);
-    const [show, setShow] = useState(false)
-     //setRooms(JSON.parse(localStorage.getItem('Rooms') || '[]'));
 
+    //declare states
+    const [rooms, setRooms] = useState<IRoom[]>([]);
+    const [show, setShow] = useState(false);
+  //get rooms from localstorage
     useEffect(() => {
-         setRooms(JSON.parse(localStorage.getItem('Rooms') || '[]'));
+        setRooms(JSON.parse(localStorage.getItem('Rooms') || '[]'));
       },[]);
 
-      useEffect(() => {
-        // window.addEventListener('storage', () => {
-        //     // When local storage changes, dump the list to
-        //     // the console.
-        //     console.log("ss");
-        //     setRooms(JSON.parse(localStorage.getItem('Rooms') || '[]'));
-        //   });
-        //  setRooms(JSON.parse(localStorage.getItem('Rooms') || '[]'));
-        localStorage.setItem('Rooms', JSON.stringify(rooms));
-        console.log(rooms);
-      },[rooms]);
-      
-    
-
-    const toggleShow = () =>{
-        setShow(!show);
-        // if(show===true){
-        //   setRooms(JSON.parse(localStorage.getItem('Rooms') || '[]'));
-        // }
-    }
-    const handleAdd = (a:any) => {
-      setRooms(rooms => [...rooms,  a ]);
-      
-      //setRooms(JSON.parse(localStorage.getItem('Rooms') || '[]'))
-      
+    //set data to localstorage when rooms state changes
+    useEffect(() => {
+      localStorage.setItem('Rooms', JSON.stringify(rooms));
+    },[rooms]);
+  
+    //toggle form show
+  const toggleShow = () =>{
+      setShow(!show);
   }
+  //add new room to room state
+  const handleAdd = (a:any) => {
+      setRooms(rooms => [...rooms,  a ]);
+  }
+  //Switch ON/OFF room with id
   const handleToggle = (id:number, a:boolean) => {
-    // setRooms(rooms => [...rooms,  a ]);
-    // console.log('toggle' + id);
-    //setRooms(JSON.parse(localStorage.getItem('Rooms') || '[]'))
     setRooms(
     rooms.map((item,i)  => 
       i === id 
       ? {...item, isOn : !item.isOn} 
       : item ))
-    
-}
+  }
+
+  //Delete room and update localstorage
   const handleDelete= (a:any) => {
     setRooms(rooms.splice(a,1))
     localStorage.setItem('Rooms', JSON.stringify(rooms));
@@ -100,13 +74,27 @@ const Main = () =>{
 }
 
     return(
+      <div>
+        
+          <div className="navbar navbar-light">
+             <img src="user.png" height="50px" width="50px" ></img>
+             <h1>Hi user!</h1>
+             <h3>Welcome to home ! </h3> 
+           <button className="addButton" onClick={toggleShow }>+</button>
+        
+          </div>
+
         <div>
-            {/* <div onClick={e=> setShow(!show) }>+</div> */}
-            <div className="blocks" onClick={toggleShow }><h1>+</h1></div>
-            {show ? <AddRoom show={show} toggleShow={toggleShow} handleAdd={handleAdd}/> : ""}
-            <RoomBlocks rooms={rooms} handleDelete={handleDelete} handleToggle={handleToggle}  />
+           {/* if show is true show form */}
+           {show ? <AddRoom show={show} toggleShow={toggleShow} handleAdd={handleAdd}/> : ""} 
+        </div>
             
-            </div>
+        
+            {/* display rooms */}
+            <RoomBlocks rooms={rooms} handleDelete={handleDelete} handleToggle={handleToggle} />
+          
+          
+      </div>
         
     );
       
