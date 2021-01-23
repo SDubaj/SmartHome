@@ -1,29 +1,46 @@
 import React, { useState } from 'react';
-type Props = {
+import { IHandleAddRoom } from './Main';
+// type handleAdd = (a: any) => any;
+// interface MyClassProps {
+//     onChange: MyFunctionType;
+//     niceProp: string;
+// }
+
+interface Props extends IHandleAddRoom {
     show:boolean,
-    toggleShow: () => void
+    toggleShow: () => void,
+    handleAdd: (a:any) => void
 }
 const AddRoom = (props:Props) =>{
     const [name, setName] = useState("");
-    const [isOn, setIsOn] = useState(false);
-   
+    //var isOn = false;
+    // var shows:boolean;
+    // const [show, setShow] = useState(props.show)
+
+    // const toggleShow = (e : React.MouseEvent<HTMLElement>) =>{
+    //     e.preventDefault();
+    //     setShow(!show);
+    //     console.log(show);
+    // }
     const handleSubmit = (event : React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
         let data = 
             {
             name:name,
-            isOn:isOn
+            isOn:false
         }
     ;
         
-    var retrievedObject = [{}, {}, {}];
-       retrievedObject = JSON.parse(localStorage.getItem('Rooms') || '[]');
-       console.log(retrievedObject);
-         if(retrievedObject != null ){
+    // var retrievedObject = [{}, {}, {}];
+    //    retrievedObject = JSON.parse(localStorage.getItem('Rooms') || '[]');
+    //    console.log(retrievedObject);
+        //  if(retrievedObject != null ){
             
-         retrievedObject.push(data);
-        }
-        localStorage.setItem('Rooms', JSON.stringify(retrievedObject));
+        //  retrievedObject.push(data);
+        // }
+        // localStorage.setItem('Rooms', JSON.stringify(retrievedObject));
         props.toggleShow();
+        props.handleAdd(data);
     }
     const handleChange = (event : React.FormEvent<HTMLInputElement>) => {
         console.log(event.currentTarget.value);
@@ -31,11 +48,22 @@ const AddRoom = (props:Props) =>{
 
 
     }
-
+//     var form = <div>
+//     <form onSubmit={handleSubmit} >
+//   <label>
+//     Imię:
+//     <input type="text" name="name" onChange={handleChange}/>
+//   </label>
+//   <button type="submit" value="Wyślij"  onClick={props.toggle}>Wyslij</button>
+// </form>
+//     </div>
     return(
         <div>
 
-           
+            {/* <div onClick={e=> setShow(!show) }>+</div> */}
+
+            {/* <div onClick={toggleShow }>+</div> */}
+            {/* {show ? "" : form} */}
             <form  onSubmit={handleSubmit}>
                 <label>
                     Nazwa Pokoju:
