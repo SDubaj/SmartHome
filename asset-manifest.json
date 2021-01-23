@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.dabd63fb.chunk.css",
-    "main.js": "/static/js/main.8a2962dc.chunk.js",
-    "main.js.map": "/static/js/main.8a2962dc.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.7446153a.js",
-    "runtime-main.js.map": "/static/js/runtime-main.7446153a.js.map",
-    "static/js/2.e91f562e.chunk.js": "/static/js/2.e91f562e.chunk.js",
-    "static/js/2.e91f562e.chunk.js.map": "/static/js/2.e91f562e.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.72913ef1cb79a6b915d9e367376bd7c6.js": "/precache-manifest.72913ef1cb79a6b915d9e367376bd7c6.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.dabd63fb.chunk.css.map": "/static/css/main.dabd63fb.chunk.css.map",
-    "static/js/2.e91f562e.chunk.js.LICENSE.txt": "/static/js/2.e91f562e.chunk.js.LICENSE.txt"
+    "main.css": "/SmartHome/static/css/main.dabd63fb.chunk.css",
+    "main.js": "/SmartHome/static/js/main.8a2962dc.chunk.js",
+    "main.js.map": "/SmartHome/static/js/main.8a2962dc.chunk.js.map",
+    "runtime-main.js": "/SmartHome/static/js/runtime-main.ca71bcbe.js",
+    "runtime-main.js.map": "/SmartHome/static/js/runtime-main.ca71bcbe.js.map",
+    "static/js/2.e91f562e.chunk.js": "/SmartHome/static/js/2.e91f562e.chunk.js",
+    "static/js/2.e91f562e.chunk.js.map": "/SmartHome/static/js/2.e91f562e.chunk.js.map",
+    "index.html": "/SmartHome/index.html",
+    "precache-manifest.e94155fe03064b8e2af4bf3240ec9a86.js": "/SmartHome/precache-manifest.e94155fe03064b8e2af4bf3240ec9a86.js",
+    "service-worker.js": "/SmartHome/service-worker.js",
+    "static/css/main.dabd63fb.chunk.css.map": "/SmartHome/static/css/main.dabd63fb.chunk.css.map",
+    "static/js/2.e91f562e.chunk.js.LICENSE.txt": "/SmartHome/static/js/2.e91f562e.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.7446153a.js",
+    "static/js/runtime-main.ca71bcbe.js",
     "static/js/2.e91f562e.chunk.js",
     "static/css/main.dabd63fb.chunk.css",
     "static/js/main.8a2962dc.chunk.js"
