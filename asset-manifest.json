@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/smarthome/static/css/main.dabd63fb.chunk.css",
+    "main.js": "/smarthome/static/js/main.8a2962dc.chunk.js",
+    "main.js.map": "/smarthome/static/js/main.8a2962dc.chunk.js.map",
+    "runtime-main.js": "/smarthome/static/js/runtime-main.c4e80821.js",
+    "runtime-main.js.map": "/smarthome/static/js/runtime-main.c4e80821.js.map",
+    "static/js/2.e91f562e.chunk.js": "/smarthome/static/js/2.e91f562e.chunk.js",
+    "static/js/2.e91f562e.chunk.js.map": "/smarthome/static/js/2.e91f562e.chunk.js.map",
+    "index.html": "/smarthome/index.html",
+    "precache-manifest.1e3b1064196376c7545d07c2f8479638.js": "/smarthome/precache-manifest.1e3b1064196376c7545d07c2f8479638.js",
+    "service-worker.js": "/smarthome/service-worker.js",
+    "static/css/main.dabd63fb.chunk.css.map": "/smarthome/static/css/main.dabd63fb.chunk.css.map",
+    "static/js/2.e91f562e.chunk.js.LICENSE.txt": "/smarthome/static/js/2.e91f562e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c4e80821.js",
+    "static/js/2.e91f562e.chunk.js",
+    "static/css/main.dabd63fb.chunk.css",
+    "static/js/main.8a2962dc.chunk.js"
+  ]
+}
