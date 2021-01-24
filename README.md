@@ -1,15 +1,15 @@
 Zadanie 1:
 
-const example = {example1: "example" , example2: " example "};
+  const example = {example1: "example" , example2: " example "};
 
-const cloneExample= {...example};
+  const cloneExample= {...example};
 
-console.log(example);   // result:  example1: "example1" , example2: " example2" 
+  console.log(example);   // result:  example1: "example1" , example2: " example2" 
 
 Zadanie 2:
 
 
-Live: https://sdubaj.github.io/SmartHome/
+  Live: https://sdubaj.github.io/SmartHome/
 
 
 
