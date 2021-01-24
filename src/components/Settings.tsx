@@ -35,7 +35,7 @@ function Settings({ match }: RouteComponentProps<TParams>,{id}:Props) {
           var random2 = Number(res.data.slice(3,5));
            setRandomNumber(randomNumber => [random1 ]);
            setRandomNumber(randomNumber => [...randomNumber,  random2 ]);
-          console.log(res.data);
+          //console.log(res.data);
         })
         .catch(err => {
             console.log(err.message);
@@ -79,19 +79,21 @@ const handleToggle = (id:number, a:boolean) => {
   <div className="settings">
     <div className="  navbar-settings">
 
-      <Link className="goBackLink" to='/SmartHome/'><img src="./../leftArrow.png" height="40px" width="40px" alt="GoBack"/></Link>
+      <Link className="goBackLink" to='/SmartHome/'>
+        <img src="./../leftArrow.png" height="40px" width="40px" alt="GoBack" />
+      </Link>
 
       <div className="navbar-info">
         <h1>{loading ? "" : rooms[roomId].name }</h1>
 
           <div className="navbar-temp">
-              <img src="./../temp.png" height="50px" width="50px"/>
+              <img src="./../temp.png" height="50px" width="50px" alt="tempIcon"/>
               <h3>{randomNumber[0]} &#x2103;</h3>
               <h4>Temp</h4>
           </div>
 
             <div className="navbar-humidity">
-              <img src="./../water.png" height="50px" width="50px"/>
+              <img src="./../water.png" height="50px" width="50px" alt="waterIcon"/>
               <h3>{randomNumber[1]}% </h3>
               <h4>Humidity</h4>
             </div>

@@ -1,5 +1,4 @@
-import React, { SyntheticEvent, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, {  useState } from 'react';
 import Switch from "react-switch";
 import RangeSlider from 'react-bootstrap-range-slider';
 import { IHandles } from './Main';
@@ -54,7 +53,7 @@ const DeviceBlock: React.FC<Props> = (props:Props ) =>{
                   {/* <div className="closeDevice" ><img src="./../x.png" height="30px" width="30px"/></div> */}
             </span>
             <div className="addButton" onClick={handleDelete}>
-                <img src="./../x.png" height="30px" width="30px"/>
+                <img src="./../x.png" height="30px" width="30px" alt="closeIcon"/>
             </div>
             
                 <RangeSlider

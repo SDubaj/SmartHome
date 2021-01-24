@@ -82,7 +82,7 @@ const Main = () =>{
       <div>
         
           <div className="navbar navbar-light">
-             <img src="user.png" height="50px" width="50px" ></img>
+             <img src="user.png" height="50px" width="50px" alt="userIcon"></img>
              <h1>Hi user!</h1>
              <h3>Welcome to home ! </h3> 
            <button className="addButton" onClick={toggleShow }>+</button>

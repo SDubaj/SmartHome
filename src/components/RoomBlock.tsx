@@ -33,8 +33,12 @@ const RoomBlock: React.FC<Props> = (props:Props ) =>{
 
             <div className="roomOptions">
                 <Switch onColor='#f57843' offColor="#f9a886" onChange={handleChange} checked={toggleSwitch} />
-                <Link to={`/SmartHome/settings/${props.id}`} ><img src="settings.png" height="30px" width="30px"/></Link>
-                <div className="close" onClick={handleDelete}><img src="x.png" height="30px" width="30px"/></div> 
+                <Link to={`/SmartHome/settings/${props.id}`} >
+                    <img src="settings.png" height="30px" width="30px" alt="settingsIcon"/>
+                </Link>
+                <div className="close" onClick={handleDelete}>
+                    <img src="x.png" height="30px" width="30px" alt="closeIcon"/>
+                </div> 
             </div>
          </div>
      )
