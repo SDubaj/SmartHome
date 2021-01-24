@@ -1,4 +1,7 @@
-live: https://sdubaj.github.io/SmartHome/
+Zadanie 2:
+
+
+Live: https://sdubaj.github.io/SmartHome/
 
 
 Zadanie 1:
