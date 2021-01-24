@@ -30,7 +30,7 @@ const AddDevice: React.FC<Props> = (props:Props) => {
         props.handleAdd(data);
     }
     const handleChange = (event : React.FormEvent<HTMLInputElement>) => {
-        console.log(event.currentTarget.value);
+        
         setDevice(event.currentTarget.value);
     }
     const handleType = (event : React.FormEvent<HTMLInputElement>) => {
@@ -41,13 +41,13 @@ const AddDevice: React.FC<Props> = (props:Props) => {
             <form  onSubmit={handleSubmit}>
                 <label>
                     
-                    <input placeholder="Device" type="text" name="name" onChange={handleChange} />
+                    <input className="deviceInput" placeholder="Device" type="text" name="name" onChange={handleChange} />
                 </label> <br/>
                 <label >
                  <h4>Choose type of device's value:</h4> 
-                  <input checked type="radio" value="Temperature" name="type" onChange={handleType}/> Temperature
-                  <input type="radio" value="Brightness" name="type" onChange={handleType}/> Brightness
-                  <input type="radio" value="Volume" name="type" onChange={handleType}/> Volume
+                  <input className="radioButton"  type="radio" value="Temperature" name="type" onChange={handleType} defaultChecked /> Temperature 
+                  <input className="radioButton" type="radio" value="Brightness" name="type" onChange={handleType}/> Brightness 
+                  <input className="radioButton" type="radio" value="Volume" name="type" onChange={handleType}/> Volume 
                 </label><br/>
                 
                 <button type="submit" value="Wyślij"> &#x2714;</button>

@@ -33,7 +33,6 @@ export interface IHandleAddRoom{
 
 
 const Main = () =>{
-    window.addEventListener('storage',e => console.log())
 
     //declare states
     const [rooms, setRooms] = useState<IRoom[]>([]);
@@ -63,6 +62,13 @@ const Main = () =>{
       i === id 
       ? {...item, isOn : !item.isOn} 
       : item ))
+      
+      
+      rooms.map((item)=>
+      item.devices.map((item)=>
+        item.isOn = a
+      )
+    )
   }
 
   //Delete room and update localstorage
@@ -70,7 +76,6 @@ const Main = () =>{
     setRooms(rooms.splice(a,1))
     localStorage.setItem('Rooms', JSON.stringify(rooms));
     setRooms(JSON.parse(localStorage.getItem('Rooms') || '[]'))
-    console.log(a);
 }
 
     return(

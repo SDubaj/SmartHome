@@ -21,7 +21,6 @@ const AddRoom: React.FC<Props>  = (props:Props) =>{
         props.handleAdd(data);
     }
     const handleChange = (event : React.FormEvent<HTMLInputElement>) => {
-        console.log(event.currentTarget.value);
         setName(event.currentTarget.value);
     }
     return(
