@@ -244,6 +244,12 @@ background: linear-gradient(180deg, rgb(245, 120, 67) 21%, rgba(254,121,68,1) 51
   margin:10px;
   font-size:1em;
 }
+input[type=text] {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  resize: vertical;
+}
 /* input[type='radio']:after {
   width: 15px;
   height: 15px;
