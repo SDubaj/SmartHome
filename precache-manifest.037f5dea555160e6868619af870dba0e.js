@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b0238a9625e04183e5265b4d0ed42162",
+    "revision": "1f7e01c43d77f342fd253ab32c9a134b",
     "url": "/SmartHome/index.html"
   },
   {
-    "revision": "976c8f2c077e5921aa62",
-    "url": "/SmartHome/static/css/main.ed27f645.chunk.css"
+    "revision": "055ffc0138d60ff74a50",
+    "url": "/SmartHome/static/css/main.42b60dba.chunk.css"
   },
   {
     "revision": "18a00f31124d41a1d5fb",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/SmartHome/static/js/2.5d24afcd.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "976c8f2c077e5921aa62",
+    "revision": "055ffc0138d60ff74a50",
     "url": "/SmartHome/static/js/main.54a55f82.chunk.js"
   },
   {
