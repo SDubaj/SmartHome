@@ -1,5 +1,5 @@
 
-  Live: https://sdubaj.github.io/SmartHome/
+  Demo: https://sdubaj.github.io/SmartHome/
 
 
 
